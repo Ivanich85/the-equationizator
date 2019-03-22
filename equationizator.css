@@ -1,0 +1,47 @@
+body {
+    text-align: center;
+    background-color: rgb(219, 219, 219);
+    font: 20px Arial;
+}
+
+main {
+    background-color: white;
+    width: 70%;
+    margin: auto;
+    padding: 15px;
+}
+
+.member {
+    display: inline-block;
+}
+
+.equations_field {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.equation {
+    margin: 20px;
+}
+
+.member {
+    font-size: 30px;
+    margin-left: 10px;
+    align-self: auto;
+}
+
+.input_member {
+    width: 2em;
+}
+
+.check_result {
+    font-size: 15px;
+}
+
+.check_button {
+    padding: 10px 25px;
+    margin-top: 20px;
+    font-size: 16px;
+}
