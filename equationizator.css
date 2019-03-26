@@ -8,7 +8,8 @@ main {
     background-color: white;
     width: 70%;
     margin: auto;
-    padding: 15px;
+    padding: 12px;
+    border-radius: 10px;
 }
 
 .member {
@@ -23,17 +24,18 @@ main {
 }
 
 .equation {
-    margin: 20px;
+    margin: 34px 20px;
 }
 
 .member {
-    font-size: 30px;
-    margin-left: 10px;
+    font-size: 32px;
+    margin-left: 15px;
     align-self: auto;
 }
 
 .input_member {
     width: 2em;
+    text-align: center;
 }
 
 .empty_value {
@@ -42,11 +44,11 @@ main {
 
 .check_result {
     font-size: 16px;
-    margin-top: 4px;
+    margin-top: 2px;
 }
 
 .check_button {
     padding: 10px 25px;
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 16px;
 }
