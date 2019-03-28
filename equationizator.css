@@ -1,14 +1,25 @@
+@import url(http://fonts.googleapis.com/css?family=Bad+Script&subset=cyrillic,latin);
+
 body {
     text-align: center;
     background-color: rgb(219, 219, 219);
-    font: 20px Arial;
+    font: 28px 'Bad Script', cursive;
+    color: rgba(0, 5, 80, 0.842);
+}
+
+h3 {
+    margin-top: -5px;
+}
+
+h6 {
+    margin: -30px 5px 10px;
 }
 
 main {
     background-color: white;
     width: 70%;
     margin: auto;
-    padding: 12px;
+    padding: 10px;
     border-radius: 10px;
 }
 
@@ -21,10 +32,13 @@ main {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    background: linear-gradient( #bbb, transparent 1px), linear-gradient( 90deg, #bbb, transparent 1px);
+    background-size: 20px 20px;
+    background-position: center center;
 }
 
 .equation {
-    margin: 34px 20px;
+    margin: 25px 35px;
 }
 
 .member {
@@ -36,6 +50,7 @@ main {
 .input_member {
     width: 2em;
     text-align: center;
+    font: 28px 'Bad Script', cursive;
 }
 
 .empty_value {
@@ -43,12 +58,28 @@ main {
 }
 
 .check_result {
-    font-size: 16px;
-    margin-top: 2px;
+    font-size: 18px;
+    margin-top: 1px;
+}
+
+.correct_answer {
+    color: green;
+}
+
+.incorrect_answer {
+    color: red;
 }
 
 .check_button {
-    padding: 10px 25px;
-    margin-top: 15px;
-    font-size: 16px;
+    padding: 5px 25px;
+    font: bold 16px 'Bad Script', cursive;
+    border: 0px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    outline: none;
+    background: linear-gradient(90deg, #eff5b0, #bacdff75);
+}
+
+.check_button:active {
+    box-shadow: inset 2px 1px 8px rgba(0, 0, 0, 0.5);
 }
