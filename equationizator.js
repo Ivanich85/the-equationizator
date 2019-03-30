@@ -1,7 +1,7 @@
-var NUMBER_OF_EQUATIONS = 3;
+var NUMBER_OF_EQUATIONS = 9;
 
-var MAXIMUM_DIGIT = 22;
-var NUMBER_OF_TRIES = 3;
+var MAXIMUM_DIGIT = 12;
+var NUMBER_OF_TRIES = 2;
 
 // Pattern for an equation parsing
 var EQUATION_PATTERN = /(\d+)(\+|\-)(\d+)=(\d+)/;
@@ -60,11 +60,11 @@ function createRandomEquationType() {
     generateDigitValuesAndSignValue();
     var randomEquation = Math.random();
     if (randomEquation < 0.33) {
-        equation = createEquationTypeOne();
-    } else if (randomEquation > 0.66) {
-        equation = createEquationTypeThree();
-    } else {
         equation = createEquationTypeTwo();
+    } else if (randomEquation > 0.66) {
+        equation = createEquationTypeOne();
+    } else {
+        equation = createEquationTypeThree();
     }
     return equation;
 }
@@ -165,7 +165,9 @@ function activateResultButton() {
     button.addEventListener('click', checkAllEquations);
 }
 
-function checkAllEquations() {
+function checkAllEquations() { 
+    decreaseTries();
+    uploadButtonText();  
     Array.from(document.getElementsByClassName('equation')).forEach(function (item) {
         isAnswerCorrect(item);
     });
@@ -179,13 +181,11 @@ function disabledButton() {
     document.querySelector('.check_button').disabled = true;
 }
 
-function isWin() {
+function isWin() {    
     return Array.from(document.getElementsByClassName('equation correct_answer')).length == NUMBER_OF_EQUATIONS;
 }
 
-function isGameOver() {
-    decreaseTries();
-    uploadButtonText();
+function isGameOver() {    
     return NUMBER_OF_TRIES <= 0;
 }
 

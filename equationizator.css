@@ -78,7 +78,7 @@ main {
     border-radius: 10px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     outline: none;
-    background: linear-gradient(90deg, #ecffc1, #c2d3fdd2);
+    background: linear-gradient(90deg, #e2ebffd2, #c2d3fdd2);
 }
 
 .check_button:active {
