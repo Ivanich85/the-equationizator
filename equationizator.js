@@ -1,5 +1,4 @@
 var NUMBER_OF_EQUATIONS = 9;
-
 var MAXIMUM_DIGIT = 12;
 var NUMBER_OF_TRIES = 2;
 
