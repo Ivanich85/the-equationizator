@@ -52,21 +52,28 @@ function gameStart() {
 function addEquationToField() {
     var field = document.querySelector('.equations_field');
     for (var i = 0; i < NUMBER_OF_EQUATIONS; i++) {
-        field.appendChild(createRandomEquationType());
+        //field.appendChild(createExamplesOnly()); // Генерировать только примеры
+        field.appendChild(createExamplesAndEquations()); // Генерировать уравнения и примеры
     }
 }
 
-function createRandomEquationType() {
+function createExamplesAndEquations() {
+    var equation = null;
     generateDigitValuesAndSignValue();
     var randomEquation = Math.random();
     if (randomEquation < 0.33) {
-        equation = createEquationTypeTwo();
+        equation = createExample();
     } else if (randomEquation > 0.66) {
         equation = createEquationTypeOne();
     } else {
-        equation = createEquationTypeThree();
+        equation = createEquationTypeTwo();
     }
     return equation;
+}
+
+function createExamplesOnly() {
+    generateDigitValuesAndSignValue();
+    return createExample();
 }
 
 function generateDigitValuesAndSignValue() {
@@ -97,17 +104,20 @@ function createEquation(digitOrInputOne, sign, digitOrInputTwo, equally, digitOr
     return equation;
 }
 
+// Обычный пример
+function createExample() {
+    return createEquation(createDigit(DIGIT_ONE_VALUE), createSign(SIGN_VALUE), createDigit(DIGIT_TWO_VALUE),
+        createEqually(), createInput(), createCheckResult());
+}
+
+// Уравнение 1
 function createEquationTypeOne() {
     return createEquation(createDigit(DIGIT_ONE_VALUE), createSign(SIGN_VALUE), createInput(),
         createEqually(), createResult(DIGIT_TWO_VALUE), createCheckResult());
 }
 
+// Уравнение 2
 function createEquationTypeTwo() {
-    return createEquation(createDigit(DIGIT_ONE_VALUE), createSign(SIGN_VALUE), createDigit(DIGIT_TWO_VALUE),
-        createEqually(), createInput(), createCheckResult());
-}
-
-function createEquationTypeThree() {
     return createEquation(createInput(), createSign(SIGN_VALUE), createDigit(DIGIT_ONE_VALUE),
         createEqually(), createResult(DIGIT_TWO_VALUE), createCheckResult());
 }
